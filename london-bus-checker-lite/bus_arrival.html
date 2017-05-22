@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Bus Arrival</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-md-8">
+
+            <h4 id="stopName">Loading...</h4>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Line</th>
+                    <th>Destination</th>
+                    <th>In (mins)</th>
+                    <th>At</th>
+                </tr>
+                </thead>
+                <tbody id="table_rows">
+                </tbody>
+            </table>
+
+            <p>refreshed at : <span id="refreshedAt"></span> <span id="loaded"></span></p>
+
+            <button type="button" class="btn btn-primary btn-lg btn-block" id="button_refresh">Refresh</button>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="./bus_arrival.js"></script>
+
+</body>
+</html>

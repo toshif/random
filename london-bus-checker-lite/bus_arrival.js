@@ -52,6 +52,8 @@ function refresh() {
     $( "#stopName" ).text( stopName + " - Stop " + platformName + " - Line " + busLine);
     // $( "#updatedAt" ).text( timestamp );
     $( "#refreshedAt" ).text( refreshedAt );
+    $( "#loaded").fadeIn();
+    setTimeout(function() {$( "#loaded").fadeOut("slow");}, 1000);
     $( "#table_rows" ).html( rows );
   });
 }

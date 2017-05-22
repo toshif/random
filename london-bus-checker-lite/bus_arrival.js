@@ -55,6 +55,7 @@ function refresh() {
     $( "#loaded").fadeIn();
     setTimeout(function() {$( "#loaded").fadeOut("slow");}, 1000);
     $( "#table_rows" ).html( rows );
+    $( "#button_refresh" ).removeClass("active");
   });
 }
 

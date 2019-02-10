@@ -1,11 +1,13 @@
 // http://localhost:63342/chelper1/notes/bus/bus_arrival.html?line=391&stopPointId=490007057S
 
 var stopPointId;
+var line;
 var busLines;
 
 $(document).ready(function(){
   stopPointId = getUrlParameter("stopPointId");
-  busLinesArray = getUrlParameter("line").split(",");
+  line = getUrlParameter("line");
+  busLinesArray = line.split(",");
   busLines = {};
   for (var busLine in busLines) {
     busLines[busLine] = true;
@@ -53,7 +55,7 @@ function refresh() {
       rows += row;
     }
 
-    $( "#stopName" ).text( stopName + " - Stop " + platformName + " - Line " + busLine);
+    $( "#stopName" ).text( stopName + " - Stop " + platformName + " - Line " + line);
     // $( "#updatedAt" ).text( timestamp );
     $( "#refreshedAt" ).text( refreshedAt );
     $( "#loaded").fadeIn();

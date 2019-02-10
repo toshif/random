@@ -35,7 +35,7 @@ function refresh() {
     for (var i in data) {
       var obj = data[i];
 
-      if ( ! busLines[obj.lineId] ) {
+      if ( ! busLines[parseInt(obj.lineId)] ) {
         continue;
       }
 

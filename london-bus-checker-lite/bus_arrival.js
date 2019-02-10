@@ -7,9 +7,10 @@ var busLines;
 $(document).ready(function(){
   stopPointId = getUrlParameter("stopPointId");
   line = getUrlParameter("line");
+  lineArray = line.split(",");
   busLines = {};
-  for (var busLine in line.split(",")) {
-    busLines[busLine] = true;
+  for (var idx in lineArray) {
+    busLines[lineArray[idx]] = true;
   }
 
   $("#button_refresh").click(refresh);

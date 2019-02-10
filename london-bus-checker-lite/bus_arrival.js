@@ -10,7 +10,7 @@ $(document).ready(function(){
   busLinesArray = line.split(",");
   busLines = {};
   for (var busLine in busLines) {
-    busLines[busLine] = true;
+    busLines[parseInt(busLine)] = true;
   }
 
   $("#button_refresh").click(refresh);

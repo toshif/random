@@ -9,7 +9,7 @@ $(document).ready(function(){
   line = getUrlParameter("line");
   busLines = {};
   for (var busLine in line.split(",")) {
-    busLines[parseInt(busLine)] = true;
+    busLines[busLine] = true;
   }
 
   $("#button_refresh").click(refresh);
@@ -34,7 +34,7 @@ function refresh() {
     for (var i in data) {
       var obj = data[i];
 
-      if ( ! busLines[parseInt(obj.lineId)] ) {
+      if ( ! busLines[obj.lineId] ) {
         continue;
       }
 

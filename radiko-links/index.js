@@ -17,7 +17,9 @@ $(document).ready(function () {
     var links = "";
     MY_FAVORITES.forEach(function (item, index) {
         var today = new Date();
-        var today_str = '' + today.getUTCFullYear() + today.getUTCMonth() + today.getUTCDate();
+        var tmonth = ("0" + (today.getMonth() + 1)).slice(-2);
+        var tdate = ("0" + today.getDate()).slice(-2);
+        var today_str = '' + today.getUTCFullYear() + tmonth + tdate;
         href = 'http://radiko.jp/#!/ts/' + item['station'] + '/' + today_str + item['hour'] + '00';
         links += '<li><a href="' + href + '">' + item['station'] + ' ' + item['hour'] + ' ' + item['name'] + '</a></li>';
     });

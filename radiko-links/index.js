@@ -19,7 +19,7 @@ $(document).ready(function () {
         var today = new Date();
         var today_str = '' + today.getUTCFullYear() + today.getUTCMonth() + today.getUTCDate();
         href = 'http://radiko.jp/#!/ts/' + item['station'] + '/' + today_str + item['hour'] + '00';
-        links += '<li><a href="">' + item['station'] + ' ' + item['hour'] + ' ' + item['name'] + '</a></li>';
+        links += '<li><a href="' + href + '">' + item['station'] + ' ' + item['hour'] + ' ' + item['name'] + '</a></li>';
     });
     $("#my-links").html(links);
 });

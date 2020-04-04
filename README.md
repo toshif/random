@@ -1,5 +1,12 @@
 http://toshif.github.io/samples/
 
+http://toshif.github.io/samples/js-samples/
+
+http://toshif.github.io/samples/london-bus-checker-lite/
+
+http://toshif.github.io/samples/radiko-links/
+
+
 A First Level Header
 ====================
 

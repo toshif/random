@@ -29,6 +29,20 @@ $ git checkout bran1
 Push the new branch to origin
 $ git push --set-upstream origin bran1
 
+Visualize the log graph
+$ git log --all --decorate --oneline --graph
+* 5111b12 (HEAD -> bran1) uyoiu987
+| *   14d46c0 (origin/main, origin/HEAD) Merge pull request #2 from toshif/bran2
+| |\  
+| | * b4c9135 (origin/bran2) asdf
+| |/  
+| *   7993307 Merge pull request #1 from toshif/bran1
+| |\  
+| |/  
+...
+
+
 ```
+
 
 

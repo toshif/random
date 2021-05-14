@@ -29,6 +29,10 @@ $ git checkout bran1
 Push the new branch to origin
 $ git push --set-upstream origin bran1
 
+# Check commits
+$ git log
+
+
 Visualize the log graph
 $ git log --all --decorate --oneline --graph
 * 5111b12 (HEAD -> bran1) uyoiu987
@@ -42,7 +46,31 @@ $ git log --all --decorate --oneline --graph
 ...
 
 
+# Check what I am about to push
+$ git diff origin/bran2
+diff --git a/t1a b/t1a
+index 3613d14..7ed6bf8 100644
+--- a/t1a
++++ b/t1a
+@@ -1,5 +1,5 @@
+ xyz
+-
++nice
+
+
+# fetch changes for your branch
+$ git fetch
+
+# fetch changes for master
+$ git fetch origin master
+
+
+
 ```
+
+
+
+
 
 
 

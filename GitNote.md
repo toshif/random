@@ -8,6 +8,7 @@ git commit
 ```
 
 Take changes on master into your branch ( simpler form )
+https://git-scm.com/docs/git-pull
 ```
 git pull origin master
 # if something goes wrong, you can do - git reset

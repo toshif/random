@@ -1,4 +1,14 @@
+Take changes on master into your branch
+```
+git checkout master
+git pull
+git checkout <mybranch1>
+git merge master
+git commit
+```
 
+
+Basics
 
 ```shell
 $ git pull
@@ -63,6 +73,7 @@ $ git fetch
 
 # fetch changes for master
 $ git fetch origin master
+
 
 
 

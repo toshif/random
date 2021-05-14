@@ -7,6 +7,12 @@ git merge master
 git commit
 ```
 
+Take changes on master into your branch ( simpler form )
+```
+git pull origin master
+# if something goes wrong, you can do - git reset
+```
+
 
 Basics
 

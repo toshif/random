@@ -1,3 +1,7 @@
+`origin master` vs `origin/master`
+* `origin master` is master branch in origin
+* `origin/master` is a local copy of master branch in origin
+
 Take changes on master into your branch
 ```
 git checkout master

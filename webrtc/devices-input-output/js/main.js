@@ -24,9 +24,12 @@ function gotDevices(deviceInfos) {
       select.removeChild(select.firstChild);
     }
   });
+  var devicesStr = "Devices: <br>";
   for (let i = 0; i !== deviceInfos.length; ++i) {
     const deviceInfo = deviceInfos[i];
     const option = document.createElement('option');
+
+    devicesStr += deviceInfo.label + "<br>";
     option.value = deviceInfo.deviceId;
     if (deviceInfo.kind === 'audioinput') {
       option.text = deviceInfo.label || `microphone ${audioInputSelect.length + 1}`;
@@ -41,6 +44,10 @@ function gotDevices(deviceInfos) {
       console.log('Some other kind of source/device: ', deviceInfo);
     }
   }
+
+  console.log('devicesStr=' + devicesStr);
+  document.querySelector("#my_devices").innerHTML = devicesStr;
+
   selectors.forEach((select, selectorIndex) => {
     if (Array.prototype.slice.call(select.childNodes).some(n => n.value === values[selectorIndex])) {
       select.value = values[selectorIndex];

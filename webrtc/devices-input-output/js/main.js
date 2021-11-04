@@ -29,7 +29,8 @@ function gotDevices(deviceInfos) {
     const deviceInfo = deviceInfos[i];
     const option = document.createElement('option');
 
-    devicesStr += deviceInfo.label + "<br>";
+    devicesStr += deviceInfo + "<br>";
+    devicesStr += deviceInfo.label + ":" + deviceInfo.deviceId + "<br>" ;
     option.value = deviceInfo.deviceId;
     if (deviceInfo.kind === 'audioinput') {
       option.text = deviceInfo.label || `microphone ${audioInputSelect.length + 1}`;

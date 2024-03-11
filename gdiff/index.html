@@ -34,11 +34,24 @@
         font-family: "Roboto", sans-serif;
         padding: 4px;
         font-size: 15px;
+        width: 45%;        
+        max-width: 45%;
       }
 
       .my-button {
         font-family: "Roboto", sans-serif;
         font-size: 14px;
+      }
+
+      .my-container {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .my-output-area {
+        font-family: "Roboto", sans-serif;
+        font-size: 15px;
+        padding-top: 16px;
       }
     </style>
 
@@ -75,35 +88,13 @@
       }
     </script>
 
-    <form action="#" onsubmit="return false">
-      <table width="95%">
-        <tr>
-          <td width="50%">
-            <textarea
-              id="text1"
-              style="width: 100%"
-              rows="12"
-              class="my-textarea"
-            >
-text1</textarea
-            >
-          </td>
-          <td width="50%">
-            <textarea
-              id="text2"
-              style="width: 100%"
-              rows="12"
-              class="my-textarea"
-            >
-text2</textarea
-            >
-          </td>
-        </tr>
-      </table>
+    <div class="my-cotainer">
+      <textarea id="text1" rows="12" class="my-textarea">text1</textarea>
+      <textarea id="text2" rows="12" class="my-textarea">text2</textarea>
+    </div>
 
-      <input type="button" onClick="launch()" value="Compute Diff" class="my-button" />
-    </form>
+    <button class="my-button btn" onClick="launch()">Compute Diff</button>
 
-    <div id="outputdiv"></div>
+    <div id="outputdiv" class="my-output-area"></div>
   </body>
 </html>

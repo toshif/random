@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>gdiff</title>
+
+    <!-- bootstrap -->
+    <link href="./css/bootstrap.css" rel="stylesheet" />
+    <link href="./css/bootstrap-responsive.css" rel="stylesheet" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style type="text/css">
+      body {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        padding: 12px;
+      }
+
+      .my-h1 {
+        padding-bottom: 8px;
+      }
+
+      .my-textarea {
+        font-family: "Roboto", sans-serif;
+        padding: 4px;
+        font-size: 15px;
+      }
+
+      .my-button {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+      }
+    </style>
+
+    <script src="./diff_match_patch.js"></script>
+  </head>
+
+  <body>
+    <h1 class="my-h1">gdiff</h1>
+
+    <script>
+      var dmp = new diff_match_patch();
+
+      function launch() {
+        var text1 = document.getElementById("text1").value;
+        var text2 = document.getElementById("text2").value;
+        dmp.Diff_Timeout = 1.0;
+        dmp.Diff_EditCost = 4;
+
+        var ms_start = new Date().getTime();
+        var d = dmp.diff_main(text1, text2);
+        var ms_end = new Date().getTime();
+
+        // if (document.getElementById("semantic").checked) {
+        dmp.diff_cleanupSemantic(d);
+        // }
+
+        // if (document.getElementById("efficiency").checked) {
+        dmp.diff_cleanupEfficiency(d);
+        // }
+
+        var ds = dmp.diff_prettyHtml(d);
+        document.getElementById("outputdiv").innerHTML =
+          ds + "<br><hr>Time: " + (ms_end - ms_start) / 1000 + "s";
+      }
+    </script>
+
+    <form action="#" onsubmit="return false">
+      <table width="95%">
+        <tr>
+          <td width="50%">
+            <textarea
+              id="text1"
+              style="width: 100%"
+              rows="12"
+              class="my-textarea"
+            >
+text1</textarea
+            >
+          </td>
+          <td width="50%">
+            <textarea
+              id="text2"
+              style="width: 100%"
+              rows="12"
+              class="my-textarea"
+            >
+text2</textarea
+            >
+          </td>
+        </tr>
+      </table>
+
+      <input type="button" onClick="launch()" value="Compute Diff" class="my-button" />
+    </form>
+
+    <div id="outputdiv"></div>
+  </body>
+</html>
